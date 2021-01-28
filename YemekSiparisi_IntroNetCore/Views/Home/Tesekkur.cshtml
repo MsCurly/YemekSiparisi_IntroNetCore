@@ -1,0 +1,14 @@
+﻿@model KullaniciGirisi
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model.IsAccepted)
+{
+    <p>Bizi tercih ettiğin için çok mutluyuz :) Siparişin en kısa sürede eline ulaşacaktır!</p>
+}
+else
+{
+    <p>Buna üzüldük! Görüşmek üzere... </p>
+}

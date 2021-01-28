@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Product>
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<h1>Ana sayfa</h1>
+<p>Sayfamıza hoş geldin!</p>
+<p>
+    Merhaba şu an saat @ViewBag.Hour
+</p>
+@if (ViewBag.Hour < 12)
+{
+    <p>Günaydın</p>
+}
+else if (ViewBag.Hour < 18)
+{
+    <p>İyi günler</p>
+}
+else if (ViewBag.Hour < 20)
+{
+    <p>İyi akşamlar</p>
+}
+else
+{
+    <p>İyi geceler</p>
+}
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.Name   fiyatı, @item.Price TL</li>
+    }
+</ul>
+    Sipariş vermek için lütfen  <a asp-action="Siparis" asp-controller="Home" class="btn btn-succes">Tıklayınız</a>
+
+
